@@ -12,7 +12,7 @@ class InputOutputTest {
 	
 	InputOutput io = new ConsoleInputOutput();
 
-//	@Test
+	@Test
 	void readObjectTest() {
 		Integer[] array = io.readObject("Enter numbers separated by space", "no number", s -> {
 
@@ -22,37 +22,37 @@ class InputOutputTest {
 		io.writeLine(Arrays.stream(array).collect(Collectors.summarizingInt(x -> x)));
 	}
 
-//	@Test
+	@Test
 	void readIntMaxTest() {
 		int res = io.readInt("Enter numbers in range [1,40]", "no number", 1, 40);
 		io.writeLine(res);
 	}
 	
-//	@Test
+	@Test
 	void readOptionTest() {
 		List <String> list = new ArrayList <>();
 		list.add("one");
 		list.add("two");
-		String res = io.readOption("Enter value:", "Something went wrong: ", list);
+		String res = io.readOption("Enter 'one' or 'two' :", "Something went wrong: ", list);
 		io.writeLine(res);
 	}
 	
-//	@Test
+	@Test
 	void readDateTest() {
-		LocalDate res = io.readDate("Enter value:", "Something went wrong: ");
+		LocalDate res = io.readDate("Enter date:", "Something went wrong: ");
 		io.writeLine(res);
 	}
 	
 	@Test
 	void readDateFormatTest() {
 		System.out.println("readDateFormatTest");
-		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "yyyy-MM-dd");
+		LocalDate res = io.readDate("Enter date according to format:", "Something went wrong: ", "yyyy-MM-dd");
 		io.writeLine(res);
 	}
 	
-//	@Test
+	@Test
 	void readPredicateTest() {
-		String res = io.readPredicate("Enter value:", "Something went wrong: ", x->x.length()==7);
+		String res = io.readPredicate("Enter value according to predicate:", "Something went wrong: ", x->x.length()==7);
 		io.writeLine(res);
 	}
 
