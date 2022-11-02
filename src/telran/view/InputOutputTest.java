@@ -46,7 +46,7 @@ class InputOutputTest {
 	@Test
 	void readDateFormatTest() {
 		System.out.println("readDateFormatTest");
-		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "y-M-d");
+		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "yyyy-MM-dd");
 		io.writeLine(res);
 	}
 	

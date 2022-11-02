@@ -77,10 +77,13 @@ public interface InputOutput {
 	default LocalDate readDate(String prompt, String errorPrompt, String format) {
 		return readObject(prompt, errorPrompt, s -> {
 			String input = s.toString();
-			if (!input.matches(format)) {
+			DateTimeFormatter x = null;
+			try {
+				x = DateTimeFormatter.ofPattern(format);
+			} catch (IllegalArgumentException e) {
 				throw new RuntimeException(" Incorect input value: doesn't match the given format");
 			}
-			return LocalDate.parse(input, DateTimeFormatter.ofPattern(format));
+			return LocalDate.parse(input, x);
 		});
 	}
 	
