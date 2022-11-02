@@ -66,21 +66,11 @@ public interface InputOutput {
 	default LocalDate readDate(String prompt, String errorPrompt) {
 		return readObject(prompt, errorPrompt, s -> {
 			String input = s.toString();
-			
-			
-//			LocalDate res = null;
-//			try {
-//				res = LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
-//			} catch (DateTimeParseException e) {
-//				throw new RuntimeException(" Incorect input value: input should match " + "'yyyy-MM-dd';");
-//			}
-//			return res;
-			
-			
-			if (!input.matches("([0-9]){4}\\-([0-9]){2}\\-([0-9]){2}")) {
+			try {
+				return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
+			} catch (DateTimeParseException e) {
 				throw new RuntimeException(" Incorect input value: input should match " + "'yyyy-MM-dd';");
 			}
-			return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
 		});
 	}
 	

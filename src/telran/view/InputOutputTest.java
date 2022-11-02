@@ -45,13 +45,14 @@ class InputOutputTest {
 	
 	@Test
 	void readDateFormatTest() {
-		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "([0-9]){4}\\-([0-9]){2}\\-([0-9]){2}");
+		System.out.println("readDateFormatTest");
+		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "y-M-d");
 		io.writeLine(res);
 	}
 	
 //	@Test
 	void readPredicateTest() {
-		String res = io.readPredicate("Enter value:", "Something went wrong: ", x->x.length()==1);
+		String res = io.readPredicate("Enter value:", "Something went wrong: ", x->x.length()==7);
 		io.writeLine(res);
 	}
 
