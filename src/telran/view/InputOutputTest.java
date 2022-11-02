@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 class InputOutputTest {
 	
-	List <String> list = new ArrayList <>();
 	InputOutput io = new ConsoleInputOutput();
 
 //	@Test
@@ -31,6 +30,7 @@ class InputOutputTest {
 	
 //	@Test
 	void readOptionTest() {
+		List <String> list = new ArrayList <>();
 		list.add("one");
 		list.add("two");
 		String res = io.readOption("Enter value:", "Something went wrong: ", list);
@@ -43,13 +43,13 @@ class InputOutputTest {
 		io.writeLine(res);
 	}
 	
-//	@Test
+	@Test
 	void readDateFormatTest() {
 		LocalDate res = io.readDate("Enter value:", "Something went wrong: ", "([0-9]){4}\\-([0-9]){2}\\-([0-9]){2}");
 		io.writeLine(res);
 	}
 	
-	@Test
+//	@Test
 	void readPredicateTest() {
 		String res = io.readPredicate("Enter value:", "Something went wrong: ", x->x.length()==1);
 		io.writeLine(res);
