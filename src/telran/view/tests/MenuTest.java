@@ -12,18 +12,18 @@ public class MenuTest {
 
 	private static Item [] getSubmenu() {
 		Item[] res = {
-				Item.of("CalendarTest", x -> CalendarTest.getDateOperationsMenu().perform(new ConsoleInputOutput())),
-				Item.of("CalculatorTest", x -> CalculatorTest.getNumbersOperationsMenu().perform(new ConsoleInputOutput())),
+				Item.of("CalendarTest", MenuTest::launchDateOperations),
+				Item.of("CalculatorTest", MenuTest::launchNumbersOperations),
 				Item.exit()
 				};
 		return res;
 	}
 	
-	private static void launchDateOperations () {
-		CalendarTest.getDateOperationsMenu().perform(new ConsoleInputOutput());
+	private static void launchDateOperations (InputOutput io) {
+		CalendarTest.getDateOperationsMenu().perform(io);
 	}
 	
-	private static void launchNumbersOperations () {
-		CalculatorTest.getNumbersOperationsMenu().perform(new ConsoleInputOutput());
+	private static void launchNumbersOperations (InputOutput io) {
+		CalculatorTest.getNumbersOperationsMenu().perform(io);
 	}
 }
