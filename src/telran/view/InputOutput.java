@@ -8,8 +8,7 @@ import java.util.function.Predicate;
 
 public interface InputOutput {
 
-	default void close() {
-	}
+	default void close() {}
 
 	String readString(String prompt);
 

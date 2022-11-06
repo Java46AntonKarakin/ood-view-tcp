@@ -1,9 +1,10 @@
-package telran.view.tests;
+package telran.menu;
 
-import telran.menu.Menu;
 import telran.view.*;
+import telran.view.tests.CalculatorTest;
+import telran.view.tests.CalendarTest;
 
-public class MenuTest {
+public class MainMenuAppl {
 
 	public static void main(String[] args) {
 		Menu menu = new Menu("Main Menu", getSubmenu());
@@ -12,8 +13,8 @@ public class MenuTest {
 
 	private static Item [] getSubmenu() {
 		Item[] res = {
-				Item.of("DateOperationsMenu", MenuTest::launchDateOperations),
-				Item.of("NumbersOperationsMenu", MenuTest::launchNumbersOperations),
+				Item.of("DateOperationsMenu", MainMenuAppl::launchDateOperations),
+				Item.of("NumbersOperationsMenu", MainMenuAppl::launchNumbersOperations),
 				Item.exit()
 				};
 		return res;
