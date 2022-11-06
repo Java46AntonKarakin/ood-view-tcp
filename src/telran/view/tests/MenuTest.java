@@ -12,8 +12,8 @@ public class MenuTest {
 
 	private static Item [] getSubmenu() {
 		Item[] res = {
-				Item.of("CalendarTest", MenuTest::launchDateOperations),
-				Item.of("CalculatorTest", MenuTest::launchNumbersOperations),
+				Item.of("DateOperationsMenu", MenuTest::launchDateOperations),
+				Item.of("NumbersOperationsMenu", MenuTest::launchNumbersOperations),
 				Item.exit()
 				};
 		return res;
