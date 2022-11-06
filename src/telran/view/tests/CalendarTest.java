@@ -14,7 +14,7 @@ public class CalendarTest {
 	private final static String WRONG_DATE_FORMAT = "input value doesn't fit format needed";
 	private final static String HINT_DATE_FORMAT = "in format \"YYYY-MM-DD\"";
 
-	public static Menu getDateOperationsMenu () {
+	public static Menu getDateOperationsMenu() {
 		return new Menu("Date Operations Menu", getItems());
 	}
 

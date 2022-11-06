@@ -28,12 +28,13 @@ public interface Item {
 			}
 		};
 	};
-	
+
 	static Item of(String name, Consumer<InputOutput> action) {
 		return of(name, action, false);
 	}
-	
-	static Item exit () {
-		return of("exit", io -> {}, true);
+
+	static Item exit() {
+		return of("exit", io -> {
+		}, true);
 	}
 }

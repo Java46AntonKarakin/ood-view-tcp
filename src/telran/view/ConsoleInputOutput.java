@@ -4,13 +4,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ConsoleInputOutput implements InputOutput {
-	
+
 	BufferedReader reader;
-	
+
 	public ConsoleInputOutput() {
 		reader = new BufferedReader(new InputStreamReader(System.in));
 	}
-
 
 	@Override
 	public String readString(String prompt) {
@@ -25,7 +24,7 @@ public class ConsoleInputOutput implements InputOutput {
 	@Override
 	public void writeObject(Object obj) {
 		System.out.print(obj);
-		
+
 	}
 
 }
