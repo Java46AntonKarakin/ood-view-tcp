@@ -29,7 +29,7 @@ public class Menu implements Item {
 		while (true) {
 			try {
 				displayMenu(io);
-				int itemNumber = io.readInt("enter item number", "wronk item number", 1, items.size());
+				int itemNumber = io.readInt("enter item number", "wrong item number ", 1, items.size());
 				Item item = items.get(itemNumber - 1);
 				item.perform(io);
 				if (item.isExit()) {
