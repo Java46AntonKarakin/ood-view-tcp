@@ -1,5 +1,6 @@
 package telran.appl;
 
+import telran.menu.CalculatorMenu;
 import telran.menu.Menu;
 import telran.net.*;
 import telran.net.calculator.*;
@@ -11,10 +12,14 @@ public class CalculatorAppl {
 
 	public static void main(String[] args) {
 		try {
+			// 1.3.1
 			TcpHandler tcpHandler = new TcpHandler (HOSTNAME, PORT);
-			CalculatorProxy calculatorProxy = new CalculatorProxy(tcpHandler);
-			var cm = CalculatorMenu.getCalculatorItems();
-			Menu menu = new Menu("Main Menu", cm);
+			
+			// 1.3.2
+			NetCalculatorProxy calculatorProxy = new NetCalculatorProxy(tcpHandler);
+			
+			Item [] itemsFromNCP = CalculatorMenu.getCalculatorItems(calculatorProxy);
+			Menu menu = new Menu("Main Menu", itemsFromNCP);
 			menu.perform(new ConsoleInputOutput());
 			tcpHandler.close();
 		} catch (Exception e) {

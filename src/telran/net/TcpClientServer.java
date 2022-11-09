@@ -8,9 +8,10 @@ public class TcpClientServer implements Runnable {
 	private Socket socket;
 	private ObjectInputStream input;
 	private ObjectOutputStream output;
+
 	private ApplProtocol protocol;
 
-	public TcpClientServer(Socket socket, ApplProtocol protocol) throws Exception{
+	public TcpClientServer(Socket socket, ApplProtocol protocol) throws Exception {
 		this.socket = socket;
 		this.protocol = protocol;
 		input = new ObjectInputStream(socket.getInputStream());
@@ -30,7 +31,5 @@ public class TcpClientServer implements Runnable {
 		} catch (Exception e) {
 			System.out.println("abnormal closing connection: " + e.getMessage());
 		}
-
 	}
-
 }

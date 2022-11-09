@@ -1,6 +1,8 @@
-package telran.net.calculator;
+package telran.appl;
 
 import telran.net.TcpServer;
+import telran.net.calculator.CalculatorImpl;
+import telran.net.calculator.CalculatorProtocol;
 
 public class CalculatorServerAppl {
 	private static final int PORT = 2000;

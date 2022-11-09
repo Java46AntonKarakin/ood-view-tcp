@@ -3,6 +3,7 @@ package telran.net;
 import java.net.*;
 
 public class TcpServer implements Runnable {
+	
 	private ApplProtocol protocol;
 	private ServerSocket serverSocket;
 	private int port;

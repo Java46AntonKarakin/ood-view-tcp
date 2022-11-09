@@ -43,6 +43,7 @@ public class CalculatorProtocol implements ApplProtocol {
 
 	private Double[] getArguments(Serializable requestData) throws Exception {
 		try {
+			System.out.println(requestData);
 			Double[] res = (Double[]) requestData;
 			if (res.length != 2) {
 				throw new Exception("no two operands");
@@ -55,28 +56,24 @@ public class CalculatorProtocol implements ApplProtocol {
 
 	Response add(Double[] operands) {
 		Double res = calculator.add(operands[0], operands[1]);
-
 		return new Response(ResponseCode.OK, res);
 
 	}
 
 	Response subtract(Double[] operands) {
 		Double res = calculator.add(operands[0], operands[1]);
-
 		return new Response(ResponseCode.OK, res);
 
 	}
 
 	Response divide(Double[] operands) {
 		Double res = calculator.add(operands[0], operands[1]);
-
 		return new Response(ResponseCode.OK, res);
 
 	}
 
 	Response multiply(Double[] operands) {
 		Double res = calculator.add(operands[0], operands[1]);
-
 		return new Response(ResponseCode.OK, res);
 
 	}
